@@ -1,0 +1,33 @@
+/* note that it isn't standard to have a digit in the name of a css file */
+
+/* GENERAL FORMAT FOR REFERENCING TAGS IN CASS
+
+selected tag {
+    property: value;
+} 
+
+*/
+
+
+/*
+Note: in VS Code, color is displayed in a little square.
+if you click the square, it brings up a color picker
+
+alternatively, can google "color picker" to use google's color picker
+at top of search results
+*/
+h1 {
+    color: red;
+}
+
+li{
+    color: rgb(252, 3, 227)
+}
+
+p{
+    color: #0895a8
+}
+
+h4 {
+    color: rgba(252, 3, 227, 0.5)
+}

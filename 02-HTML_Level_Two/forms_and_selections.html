@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Feedback</title>
+</head>
+<body>
+    <h1>Hotel Feedback Form</h1>
+    <form method="get">        
+        <!--Note: giving same name makes radio buttons linked so only one button can be clicked at a time-->
+        <h2>Are you from inside the US or Inside the US?</h2>
+        <p><strong>Radio Buttons</strong></p>
+        <label for="inusa">Inside: </label>
+        <input id="inusa" type="radio" name="loc" value="inside">
+        <label for="outusa">Outside:</label>
+        <input id="outusa" type="radio" name="loc" value="outside">
+
+        <h2>How was your service?</h2>
+        <p><strong>Dropdown menu</strong></p>
+        <select name="stars">
+             <!-- text between option tags is what is displayed to user, value is what is submitted to server when form is submitted  -->
+            <option value="3">Great</option>
+            <option value="2">Okay</option>
+            <option value="1">Bad</option>
+            <input type="submit" name="" value="SUBMIT">
+        </select>
+        
+        <h2>Any other feedback?</h2>
+        <!-- just allows for one line of text input -->
+        <p><strong>single line of text input</strong></p>
+        <input type="text" name="" value="">
+        
+        <!-- allows for multiple lines of input -->
+        <p><strong>multiple lines of text input</strong></p>
+        <textarea name="mytext" rows="8" cols="80"></textarea>
+        <input type="submit" name="" value="SUBMIT">
+    </form>
+</body>
+</html>

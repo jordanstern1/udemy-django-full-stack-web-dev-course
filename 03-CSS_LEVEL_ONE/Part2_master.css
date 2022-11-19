@@ -1,0 +1,23 @@
+body {
+    /* background: gray; */
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR_-XfnKKCWBmrAh0JQLoQkSxWhKPFhV14Np_pn9PCRQ&s);
+    background-repeat: repeat;
+}
+
+div {
+    background: blue;
+    border-color: orange;
+    /* border-width: thick; */
+    border-width: 2px; /* specify width in pixels */
+    border-style: dotted;
+}
+
+
+p {
+    color: yellow;
+}
+
+span {
+    background: red;
+    color: black;
+}

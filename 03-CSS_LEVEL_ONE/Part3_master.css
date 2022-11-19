@@ -1,0 +1,59 @@
+/*
+See MDN documentation on CSS selectors here: 
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors
+*/
+
+/* this affects all divs
+div {
+    color: red
+} */
+
+
+/* this just affects the divs with class = "firstDiv" 
+NOTE: we have to use "." to reference a class name in CSS
+*/
+.firstDiv {
+    color: blue;
+}
+
+/* reference an ID with a "#"
+
+NOTE: an ID is unique to one single HTML element, whereas a class can apply to multiple elemnents
+*/
+#singledout {
+    color: green;
+    text-decoration: line-through;
+}
+
+/* adjacent siblings selector example
+
+this will affect any unordered list if it immediately follows an h3
+*/
+h3 + ul {
+    border: 4px dotted purple;
+}
+
+/* descendants example
+
+this will affect all anchor tags inside of a list
+*/
+li a {
+    color: red;
+}
+
+/* this will only affect a particular anchor with the specified href
+*/
+
+li a[href="https://www.npr.org"] {
+    color: blue;
+    border: 5px solid orange;
+}
+
+/* 
+This is uncommon, but can use * to try to reference all elements at once,
+overriding all the specific css selections made in this file
+* {
+    color: green;
+}
+*/
+

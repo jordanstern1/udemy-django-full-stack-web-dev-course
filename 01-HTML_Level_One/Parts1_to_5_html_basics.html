@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is a title!!</title>
+</head>
+<body>
+    <!-- comment -->
+    <!-- more comments -->
+    <!-- headings are larger and bold; largest heading = h1, smallest = h6 -->
+    <h1>This is a heading 1</h1>
+    <h2>This is a heading 2</h2>
+    <h3>This is a heading 3</h3>
+    <h4>This is a heading 4</h4>
+    <h5>This is a heading 5</h5>
+    <h6>This is a heading 6</h6>
+    <!-- regular size (non-heading) text-->
+    <p>This is a paragraph</p><p>This is a separate line</p>
+    <p>This stuff all goes within one line bakdjfak;sdj;ladjsfladhfkahsd;ahkdfsadsf
+        sdf;akjdf;lahsdfklahsdfahds;lahsdfklahsdfahdsdsfsdfj
+    </p>
+    <!-- lorem ipsum = commmon filler text for web dev-->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum suscipit vitae quis eaque voluptatem provident nostrum voluptatum minus, enim facere! Incidunt alias nihil, laboriosam tempora excepturi magni numquam obcaecati.</p>
+
+    <p><b>Old way of doing bold text</b></p>
+    <p><i>Old way of doing italics</i></p>
+
+    <!-- instructor recommends using this new approach to bold/italics-->
+    <p><strong>New way of doing bold text</strong></p>
+    <p><em>New way of doing italics</em></p>
+
+    <!-- Lists!-->
+    <h1>Lists</h1>
+    <!-- ordered list -->
+    <ol>
+        <li> Bullet one</li>
+        <li> Bullet two</li>
+        <li> Bullet three</li>
+    </ol>
+    <!-- unordered list  -->
+    <ul>    
+        <li> Bullet one</li>
+        <li> Bullet two</li>
+        <li> Bullet three</li>
+    </ul>
+    
+    <!-- can also nest lists -->
+    <ol>
+        <li>item one</li>
+        <li>item two</li>
+        <ul>
+            <li>sub-item 1</li>
+            <li>sub-item 2</li>
+            <ol>
+                <li><strong>Even more nested!!</strong></li>
+                <ul>
+                    <li><strong><em>Fucking A, we are really nested now</em></strong></li>
+                </ul>
+            </ol>
+        </ul>
+    </ol>
+
+    <h1>Divs and Spans</h1>
+    <p>div = division; allows one to use css to style elements grouped by div tags</p>
+    <div class="groupone">
+        <h1>Group One</h1>
+        <p>I want to be together in group one</p>
+    </div>
+    <p>span = almost same thing as divison, except allows styling of inline elements</p>
+    <p>I want to <span>be together in</span> this group</p>
+
+    <h1>Attributes (images and links)</h1>
+    <!-- NOTE: img tag = self-closing tag -->
+    <img src="django.png" alt="">
+    <!-- alt lets you have a message if image path specified by src doesn't work -->
+    <img src="missing.png" alt="missing.png is not found!">
+
+    <!-- use anchor tag (<a></a>) to link to another page -->
+    <a href="newpage.html">Clickable link to new page</a>
+
+    <!-- now reference non-local stuff -->
+    <a href="http://www.facebook.com">Link to Facebook</a>
+    <p>non-local image</p>
+    <img src="https://mathworld.wolfram.com/images/eps-svg/StillLifes_1000.svg">
+</body>
+</html>

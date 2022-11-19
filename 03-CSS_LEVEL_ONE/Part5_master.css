@@ -1,0 +1,13 @@
+li {
+    color: red;
+}
+
+/* class styling overrides <li> tag styling above */
+.topitems {
+    color: blue;
+}
+
+/* id styling overrides <li> tag and class styling above */
+#two {
+    border: 3px solid black;
+}
