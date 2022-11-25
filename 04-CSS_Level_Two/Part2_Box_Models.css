@@ -1,0 +1,28 @@
+/*
+
+THE CSS BOX MODEL:
+- All HTML elements can be considered boxes with five modifiable dimensions: 
+    1. content box has HEIGHT and WIDTH
+    2. PADDING describes space between content and border
+    3. BORDER is any kind of line surrounding the box
+    4. MARGIN = space around the border
+- More info here: https://en.wikipedia.org/wiki/CSS_box_model
+*/
+
+#top {
+    border: 4px solid blue;
+    width: 25%; /* takes up 25% of browser width */
+    text-align: center;
+    /* order for specifying margins is top, right, bottom left */
+    /* margin: 10px 20px 100px 400px;  */
+    
+    /* "margin: auto" means the browser selects a suitable margin to use. 
+    For example, in certain cases this value can be used to center an element. */
+    margin: auto;
+}
+
+#bottom {
+    border: 4px solid red;
+    width: 50%;
+    padding: 200px;
+}
