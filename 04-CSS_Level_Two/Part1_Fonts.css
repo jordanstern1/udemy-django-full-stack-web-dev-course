@@ -1,0 +1,51 @@
+/*
+Fonts on Windows:
+https://en.wikipedia.org/wiki/List_of_typefaces_included_with_Microsoft_Windows
+
+Fonts on Macs:
+https://en.wikipedia.org/wiki/List_of_typefaces_included_with_macOS
+
+General Font Information:
+http://www.cssfontstack.com/
+
+
+Can also get any font from Google or fontlibrary.org, in which case it doesn't matter what OS the user has (font is being served by google fonts or font library, not user's machine)
+https://fonts.google.com/
+https://fontlibrary.org/
+
+
+
+/* note: some font families don't work on all Operating Systems */
+h1 {
+    font-family: "Arial";
+}
+
+ 
+p {
+    /* font-family: monospace;
+    font-family: cursive; 
+    font-family: "Barlow"; */
+    font-family: 'ClaybornRegular';
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+body {
+    font-size: 20px;
+}
+
+/* can specify font size relative to body font size using em like this */
+#two {
+    font-size: 2.0em;
+}
+
+p {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* centering text*/
+h1 {
+    text-align: center;
+}
