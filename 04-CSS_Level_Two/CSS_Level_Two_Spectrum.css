@@ -1,0 +1,38 @@
+#title {
+    font-family: 'Syne Mono';
+    text-align: center;
+} 
+
+.artwork {
+    margin: auto;
+}
+
+td {
+    height:300px;
+    width: 150px;
+    border: 6px solid white;
+}
+
+#rect1 {
+    background: #f72585;
+}
+
+#rect2 {
+    background: #7209b7;
+}
+
+#rect3 {
+    background: #3a0ca3;
+}
+
+#rect4 {
+    background: #4361ee;
+}
+
+#rect5 {
+    background: #4cc9f0;
+}
+
+span {
+    display: inline-block;
+}
