@@ -1,0 +1,53 @@
+body {
+    font-family: 'Montserrat';
+    text-align: center;
+    margin: auto;
+    color: #FDFFFC;
+    background-color: #011627;
+    border-top: 0px;
+    border: 50px solid #2EC4B6;
+    margin: 0px;
+}
+
+p {
+    font-size: 15px;
+
+}
+
+.lorem {
+    width: 50%;
+    margin: auto;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+.input_label {
+    margin-bottom: 0px;
+}
+
+input {
+    width: 200px;
+}
+
+
+input[type="email"] {
+    margin-bottom: 50px;
+}
+
+#submit {
+    border-radius: 20px;
+    width: auto;
+    height: 90px;
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
+    background: #FF9F1C;
+
+}
+
+/* 
+
+ */
