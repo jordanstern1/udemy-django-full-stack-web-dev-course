@@ -4,8 +4,8 @@ body {
     margin: auto;
     color: #FDFFFC;
     background-color: #011627;
-    border-top: 0px;
     border: 50px solid #2EC4B6;
+    border-top: 0px;
     margin: 0px;
 }
 
@@ -17,10 +17,12 @@ p {
 .lorem {
     width: 50%;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 h2 {
     font-weight: bold;
+    margin-bottom: 60px;
 }
 
 .input_label {
@@ -44,6 +46,7 @@ input[type="email"] {
     font-size: 30px;
     text-align: center;
     margin: auto;
+    margin-bottom: 20px;
     background: #FF9F1C;
 
 }
