@@ -57,3 +57,4 @@ while (x <= 10) {
     }
 
     x = x + 1; // can also use x += 1
+}
