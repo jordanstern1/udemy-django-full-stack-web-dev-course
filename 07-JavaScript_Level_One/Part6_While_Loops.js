@@ -48,3 +48,13 @@ while(x < 5){
 // QUICK EXERCISE
 
 // Write a while loop that prints out only the even numbers from 1 to 10.
+var x = 1
+
+while (x <= 10) {
+
+    if (x % 2 === 0) {
+        console.log(x);
+    }
+
+    x = x + 1;
+}
