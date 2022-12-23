@@ -62,6 +62,13 @@ function monkeyTrouble(aSmile, bSmile) {
 
 function stringTimes(str, n) {
     //Code Goes Here
+    
+    var result = '';
+    for (i = 0; i < n; i++) {
+      result += str;
+    }
+
+    return result;
 }
 
 // PROBLEM 4: LUCKY SUM
