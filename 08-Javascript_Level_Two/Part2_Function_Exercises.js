@@ -115,7 +115,6 @@ function luckySum(a, b, c) {
 // caught_speeding(65, true) → 0
 
 function caught_speeding(speed, is_birthday) {
-  //Code Goes Here
   l1 = is_birthday ? 65 : 60;
   l2 = is_birthday ? 85 : 80;
   if (speed <= l1) {
@@ -144,5 +143,5 @@ function caught_speeding(speed, is_birthday) {
 // makeBricks(3, 2, 10) → true
 
 function makeBricks(small, big, goal){
-  //Code Goes Here
+  return goal % (big*5) <= small
 }
