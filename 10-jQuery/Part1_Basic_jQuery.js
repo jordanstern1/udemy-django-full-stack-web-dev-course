@@ -1,4 +1,4 @@
-// This is the code we typed into the console
+//note: can open Part1_MyDocument.html and run these code examples in chrome JS console to try them out
 
 // Try just the dollar sign:
 $
