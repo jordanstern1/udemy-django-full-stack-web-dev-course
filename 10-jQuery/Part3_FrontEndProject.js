@@ -1,50 +1,36 @@
-var p1 = prompt("Player One: Enter Your Name, you will be Blue")
-var p2 = prompt("Player Two: Enter Your Name, you will be Red")
+var player1 = prompt('Player One: Enter Your Name, you will be Blue');
+var player1Color = 'rgb(86, 151, 255)'
 
-var i = 1 // index to count how many moves have been played
-var className = 'turnBlue';
-// var lastClicks =
+var player2 = prompt('Player Two: Enter Your Name, you will be Red');
+var player1Color = 'rgb(237, 45, 73)'
 
-$('.circle').click(function() {
-  var id = $(this).attr('id');
-  remainder = id % 7;
-  colNum = (remainder === 0) ? 7 : remainder;
+var game_on = true;
+var table = $('table tr');
 
-  
-  if (i % 2 == 0) {
-    className = 'turnBlue';
+function reportWin(rowNum, colNum) {
+  console.log("You won starting at this row, col");
+  console.log(rowNum);
+  console.log(colNum);
+}
+
+function changeColor(rowIndex, colIndex, color) {
+  return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color', color);
+}
+
+function returnColor(rowIndex, colIndex, color) {
+  return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color');
+}
+
+function checkBottom(colIndex) {
+  var colorReport = returnColor(5, colIndex);
+  for (var row = 5; i >= 0; row--) {
+    colorReport = returnColor(row, colIndex)
+      if (colorReport === 'rgb(128, 128, 128)') {
+        return row 
+      }
   }
-  else {
-    className = 'turnRed';
-  }
+}
 
-  console.log('i' + i)
-  console.log('id' + id)
-  
-  $('#' + id).toggleClass(className)
- 
-  i++;
-  
-});
-
-
-// $('h3').text()
-
-var circle_id = $('.circle').click(function() {
-  i++;
-  if (i % 2 == 0) {
-    className = 'turnBlue';
-  }
-  else {
-    className = 'turnRed';
-  }
-  $(this).data("id");
-})
-
-var click_count = 0;
-remainder = click_count % 7;
-if (remainder == 1) {
-
-} else if (remainder == 2) {
-  
+function colorMatchCheck(one, two, three, four) {
+  return (one === two && one === three && one === four && one !== 'rgb(128, 128, 128)' & one !== 'undefined')
 }
