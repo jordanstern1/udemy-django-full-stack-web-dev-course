@@ -1,11 +1,9 @@
-const { _round } = require("regression");
-
 var p1 = prompt("Player One: Enter Your Name, you will be Blue")
 var p2 = prompt("Player Two: Enter Your Name, you will be Red")
 
 var i = 1 // index to count how many moves have been played
 var className = 'turnBlue';
-var lastClicks = 
+// var lastClicks =
 
 $('.circle').click(function() {
   var id = $(this).attr('id');
