@@ -35,7 +35,7 @@ function checkBottom(colIndex) {
   }
 }
 
-// Check to see if 4 inputs are the same color (will help us check horizontal, diagonal, or vertical win)
+// Check to see if 4 inputs are the same non-grey color (will help us check horizontal, diagonal, or vertical win)
 function colorMatchCheck(one, two, three, four) {
   return (one === two && one === three && one === four && one !== 'rgb(128, 128, 128)' & one !== 'undefined')
 }
@@ -43,7 +43,7 @@ function colorMatchCheck(one, two, three, four) {
 
 // Check for Horizontal Wins
 function horizontalWinCheck() {
-  // for each row, iterate across the columns to check for four of the same (red or blue) colors in a row
+  // for each row, iterate across the columns to check for four of the same non-grey colors in a row
   // note we only have to check the first four buttons in each row to look for a horizontal win
   for (var row = 0; row < 6; row++) {
     for (var col = 0; col < 4; col++) {
@@ -60,6 +60,8 @@ function horizontalWinCheck() {
 
 // Check for Vertical Wins
 function verticalWinCheck() {
+  // for each column, iterate across the rows to check for four of the same non-grey colors in a row 
+  // note we only have to check the first three buttons in each col to look for a vertical win
   for (var col = 0; col < 7; col++) {
     for (var row = 0; row < 3; row++) {
       if (colorMatchCheck(returnColor(row,col), returnColor(row+1,col) ,returnColor(row+2,col), returnColor(row+3,col))) {
@@ -77,11 +79,14 @@ function verticalWinCheck() {
 function diagonalWinCheck() {
   for (var col = 0; col < 5; col++) {
     for (var row = 0; row < 7; row++) {
+      // look for diagonal wins with positive slope
       if (colorMatchCheck(returnColor(row,col), returnColor(row+1,col+1) ,returnColor(row+2,col+2), returnColor(row+3,col+3))) {
         console.log('diag');
         reportWin(row,col);
         return true;
-      }else if (colorMatchCheck(returnColor(row,col), returnColor(row-1,col+1) ,returnColor(row-2,col+2), returnColor(row-3,col+3))) {
+      }
+      // look for diagonal wins with negative slope
+      else if (colorMatchCheck(returnColor(row,col), returnColor(row-1,col+1) ,returnColor(row-2,col+2), returnColor(row-3,col+3))) {
         console.log('diag');
         reportWin(row,col);
         return true;
