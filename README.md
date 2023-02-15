@@ -4,6 +4,9 @@ Notes and exercises for the [Udemy Python and Django Full Stack Web Developer Bo
 
 
 # Basic Django Workflow: Commands to Start Project, Create and App, and Create a Simple View
+
+**Before step 1, need to activate conda env w/ Django**: `$ conda activate myDjangoEnv`
+
 1. Create a project: `django-admin startproject ProTwo`
 2. Go to the project directory: `cd ProTwo`
 3. Create an app within the project: `python manage.py startapp AppTwo`
@@ -39,3 +42,9 @@ INSTALLED_APPS = [
 ```
 8. Run the server locally to test it out: `python manage.py runserver`
 9. Copy local host address into address bar to see the site
+
+
+**NOTE:** the above workflow is not ideal. It's best practice to put another urls.py file inside of each individual app, then refer to that
+file in your project folder using `django.conf.urls.include`. For an example, see `14-Django_Level_One/first_project`. Within this folder,
+the first_project subfolder contains a `urls.py` file that references the `urls.py` file found in `first_app/urls.py`. This approach creates 
+modularity, making it simpler to plug your apps into different Django projects.
