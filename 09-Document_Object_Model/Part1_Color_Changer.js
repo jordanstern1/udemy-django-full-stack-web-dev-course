@@ -33,5 +33,5 @@ function changeHeaderColor(){
   header.style.color = colorInput;
 }
 
-// Now perform the action over intervals (milliseocnds):
+// Now perform the action over intervals (milliseconds):
 setInterval("changeHeaderColor()",500);
