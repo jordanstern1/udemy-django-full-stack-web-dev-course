@@ -18,7 +18,7 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("<em>My Second Project</em>")
 ```
-6. Link the new view to a url by editing `urls.py` within the project sub-folder. Specifically, add something like this: 
+5. Link the new view to a url by editing `urls.py` within the project sub-folder. Specifically, add something like this: 
 ```
 from appTwo import views
 
@@ -28,7 +28,7 @@ urlpatterns = [
 ]
 ```
 
-7. Edit settings.py to let project know that the app exists by adding the app to INSTALLED_APPS:
+6. Edit settings.py to let project know that the app exists by adding the app to INSTALLED_APPS:
 ```
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'appTwo' # new app added here
 ]
 ```
-8. Run the server locally to test it out: `python manage.py runserver`
-9. Copy local host address into address bar to see the site
+7. Run the server locally to test it out: `python manage.py runserver`
+8. Copy local host address into address bar to see the site
 
 
 **NOTE:** the above workflow is not ideal. It's best practice to put another urls.py file inside of each individual app, then refer to that
