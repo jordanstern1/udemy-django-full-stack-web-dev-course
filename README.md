@@ -7,11 +7,11 @@ Notes and exercises for the [Udemy Python and Django Full Stack Web Developer Bo
 
 **Before step 1, need to activate conda env w/ Django**: `$ conda activate myDjangoEnv`
 
-1. Create a project: `django-admin startproject ProTwo`
-2. Go to the project directory: `cd ProTwo`
+1. Create a project: `django-admin startproject ThrowAwayTest`. Note this will create files/folders like this: 
+![Alt text](misc_images/django_project_initial_structure.png)
+2. Go to the project directory: `cd ThrowAwayTest`
 3. Create an app within the project: `python manage.py startapp AppTwo`
-4. Start the app: `python manage.py startapp appTwo`
-5. Create a new view by editing `views.py` within the app folder. Specifically, configure the HTML returned by a request like this:
+4. Create a new view by editing `views.py` within the app folder. Specifically, configure the HTML returned by a request like this:
 ```
 from django.http import HttpResponse
 
