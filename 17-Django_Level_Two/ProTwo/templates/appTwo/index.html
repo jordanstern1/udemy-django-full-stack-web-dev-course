@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- Note that we load "static" instead of "staticfiles" since "staticfiles" was removed in Django 3.0 -->
+{% load static %} 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boulder page</title>
+
+    <!-- linking the css under static/css/ to turn the heading red -->
+    <link rel="stylesheet" href='{% static  "css/mystyle.css" %}'/>
+</head>
+<body>
+    <h1>Hi! Aren't the Flatirons great?</h1>
+    <img src='{% static "images/boulder.jpg" %}' alt="Uh oh, image did not render!">
+</body>
+</html>
