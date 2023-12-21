@@ -25,4 +25,5 @@ urlpatterns = [
     # path('help/', views.help, name='help'),
     re_path(r'^help/.*', views.help, name='help'), # NOTE: use re_path() for regex matching, use path() for exact string matching
     path('', views.index, name='index'),
+    path('users/', views.users)
 ]
