@@ -14,11 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path, include # need include() so we can bring in URLs from appTwo below
+from django.urls import path
 from appTwo import views
 
 urlpatterns = [
-    re_path(r'^help/.*', include('appTwo.urls')), # NOTE: use re_path() for regex matching, use path() for exact string matching
-    path('', views.index, name='index'),
-    path('admin/', admin.site.urls),
+    # Q: why an empty string as first argument to path()?
+    # A: When you include URL patterns from an app (appTwo in your case) in 
+    #    your project's main urls.py file using include('appTwo.urls'), Django effectively appends 
+    #    the patterns from appTwo/urls.py to the path specified in the main urls.py.
+    path('', views.help, name='help'),
 ]
