@@ -5,6 +5,9 @@ Notes and exercises for the [Udemy Python and Django Full Stack Web Developer Bo
 
 # Basic Django Workflow: Commands to Start Project, Create and App, and Create a Simple View
 
+**### NOTE: lecture 132 (last lecture of section 17) provides a great overview of all Django basics in sections 16 and 17, covering how to create a project, create an app within the project**
+set up models/views/templates and wire the views up to URLs.
+
 **Before step 1, need to activate conda env w/ Django**: `$ conda activate myDjangoEnv`
 
 1. Create a project: `django-admin startproject ThrowAwayTest`. Note this will create files/folders like this: 
