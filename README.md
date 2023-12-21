@@ -56,5 +56,29 @@ Migration commands to use inside project folder after making changes to models.p
 1. `python manage.py migrate` — apply migrations
 2. `python manage.py makemigrations app_name` — register changes to application
 3. `python manage.py migrate` — run this again for some reason
-4. `python manage.py shell` — open shell to interact with database
-5. `python manage.py createsuperuser` — create super user from command line (I used username = jordan, email=my personal email, password = 1234 for for my sample app)
+4. Optionally run `python manage.py shell` — open shell to interact with database, then can test:
+    - `from app_name.models import ModelName`
+    - `m = ModelName(field1="blah", field2='foobar')` - to construct object w/ data
+    - `m.save()` to save the data we added
+    - `print(ModelName.objects.all())` to see that data was added
+6. Can create script to with fake data like this:
+    - add script to root of project called, say, `populate_models.py` and add code like [this](17-Django_Level_Two/first_project/populate_first_app.py). Don't forget
+      to add this at the top of the script:
+      ```
+      import os 
+      os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ProTwo.settings')
+
+      import django
+      django.setup()
+      ``` 
+    - run script: `python populate_models.py`
+7. Now need to add the following to `admin.py` to register the model w/ admin so that we can view the data we add in the admin:
+    ```
+    from appTwo.models import ModelName
+
+    # Register your models here.
+    admin.site.register(ModelName)
+    ```
+8. `python manage.py createsuperuser` — create super user from command line (I used username = jordan, email=my personal email, password = 1234 for for my sample app)
+9. Now can run server on local host w/ `python manage.py runserver`, then go to `http://127.0.0.1:8000/admin` and enter credentials to log in, where one can view the data 
+   and even add/delete data to the models using the admin UI that comes built in w/ Django
