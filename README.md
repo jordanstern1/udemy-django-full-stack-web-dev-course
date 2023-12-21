@@ -48,3 +48,13 @@ INSTALLED_APPS = [
 file in your project folder using `django.conf.urls.include`. For an example, see `14-Django_Level_One/first_project`. Within this folder,
 the first_project subfolder contains a `urls.py` file that references the `urls.py` file found in `first_app/urls.py`. This approach creates 
 modularity, making it simpler to plug your apps into different Django projects.
+
+## More Useful Django Commands
+### Migration commands
+
+Migration commands to use inside project folder after making changes to models.py:
+1. `python manage.py migrate` — apply migrations
+2. `python manage.py makemigrations app_name` — register changes to application
+3. `python manage.py migrate` — run this again for some reason
+4. `python manage.py shell` — open shell to interact with database
+5. `python manage.py createsuperuser` — create super user from command line (I used username = jordan, email=my personal email, password = 1234 for for my sample app)
