@@ -18,7 +18,6 @@ from django.urls import path, re_path, include # need include() so we can bring 
 from appTwo import views
 
 urlpatterns = [
-    re_path(r'^help/.*', include('appTwo.urls')), # NOTE: use re_path() for regex matching, use path() for exact string matching
-    path('', views.index, name='index'),
+    path('', include('appTwo.urls')),
     path('admin/', admin.site.urls),
 ]
