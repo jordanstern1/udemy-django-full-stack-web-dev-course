@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Note, not using bootstrap yet but still using class="container" in case we add in bootstrap later -->
+    <h1>Fill out the form!</h1>
+    <div class="container">
+        <!-- note: method="post" is not case sentitive -->
+        <form method="POST"> 
+            <!-- note using form.as_p wraps the form in a paragraph for a cleaner result -->
+            {{ form.as_p }} 
+
+            <!-- need csrf token here for security and in order for the form to work -->
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
