@@ -2,6 +2,15 @@
 
 {% extends "basic_app/base.html" %}
     {% block body_block %}
+
     <h1>WELCOME TO INDEX</h1>
-    <h1>This is index.html page showing!</h1>
+    {% comment %} <h1>This is index.html page showing!</h1> {% endcomment %}
+
+    {% comment %} Here are some template filter examples to modify things before injecting into this document: {% endcomment %}
+    <h1>{{ text|upper }}</h1>
+    <h2>{{ number|add:"99" }}</h2>
+
+    <h1>{{ text|cut:'hello' }}</h1>
+
     {% endblock %}
+    
