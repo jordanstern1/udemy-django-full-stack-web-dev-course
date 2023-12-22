@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<!DOCTYPE html>  
+
+
+{% extends "basic_app/base.html" %}
+    {% comment %} Always need DOCTYPE html at the top! {% endcomment %}
+    {% block body_block %} 
+    {% comment %} The block body_block tag we are inside of specifies content specific to each particular template {% endcomment %}
     <h1>WELCOME TO OTHER</h1>
+    <h2>THIS IS AN EXAMPLE OF TEMPLATE INHERITANCE!</h2>
+    {% endblock %}
     
 </body>
 </html>
