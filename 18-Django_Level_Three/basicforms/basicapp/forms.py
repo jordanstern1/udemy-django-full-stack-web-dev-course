@@ -1,13 +1,14 @@
 from django import forms
 from django.core import validators # built-in django validators
 
+
+
+
+# 2. Typical example of form validation
 def check_for_z(value): # NOTE: keyword value is necessary
     """ custom validator example """
     if value[0].lower() != 'z':
         raise forms.ValidationError('name needs to start with z')
-
-
-
 class FormName(forms.Form):
     name = forms.CharField()
     email = forms.EmailField()
@@ -24,8 +25,9 @@ class FormName(forms.Form):
             raise forms.ValidationError('make sure emails match')
 
 # NOTE: this has the same structure as when we created models using class ModelName(models.model)
-    
-# Initial examples of form validation
+
+
+## 1. Initial examples of form validation
 
 # class FormName(forms.Form):
 #     name = forms.CharField(validators=[check_for_z])
