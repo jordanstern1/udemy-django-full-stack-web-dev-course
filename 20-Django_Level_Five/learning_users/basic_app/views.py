@@ -1,9 +1,25 @@
 from django.shortcuts import render
 from basic_app.forms import UserForm, UserProfileInfoForm
 
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect, HttpResponse
+from django.urls import reverse # old django has resolve under contrib
+from django.contrib.auth.decorators import login_required 
+
 # Create your views here.
 def index(request):
     return render(request, 'basic_app/index.html')
+
+
+@login_required
+def special(request):
+    return HttpResponse('You are logged in—nice!')
+
+@login_required # you have to have logged in before you can access this logout view that returns you to the home (index) page
+def user_logout(request): # called user_logout to avoid collision with imported "logout"
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))
+
 
 def register(request):
     registered = False 
@@ -42,4 +58,28 @@ def register(request):
             
 
 
-    return render
+def user_login(request):
+    if request.method == 'POST':
+        
+        username = request.POST.get('username') # recall this matches name="username" from the login form in login.html
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password) # one line of code for authentication :)
+
+        if user:
+            if user.is_active:
+                login(request=request, user=user)
+
+                # NOTE: reverese allows you to reference the url in urls.py by name
+                # (recall we had path('', views.index, name='index') in our main urls.py file)
+                return HttpResponseRedirect(reverse('index')) 
+            
+            else:
+                return HttpResponse("ACCOUNT NOT ACTIVE")
+        else:
+            print("Someone tried to login and failed!")
+            print(f"Username {username} and password {password}")
+            return HttpResponse("Invalid login details supplied!")
+    else: 
+        # nothing submitted
+        return render(request, 'basic_app/login.html', {})
