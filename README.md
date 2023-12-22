@@ -16,8 +16,12 @@ set up models/views/templates and wire the views up to URLs.
 
 2. Go to the project directory: `cd ThrowAwayTest`
 3. Create an app within the project: `python manage.py startapp basic_app`
-4. Add `templates/` folder to root of project dir (HTML files w/ Django template tags go here)
-5. Edit settings.py to let project know that the app exists by adding the app to INSTALLED_APPS:
+4. Run: 
+    - `python manage.py migrate` to register the app to the project
+    - `python manage.py makemigrations basic_app` 
+    - `python mange.py migate` again
+5. Add `templates/` folder to root of project dir (HTML files w/ Django template tags go here)
+6. Edit settings.py to let project know that the app exists by adding the app to INSTALLED_APPS:
 ```python
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -29,7 +33,7 @@ INSTALLED_APPS = [
     'basic_app' # new app added here
 ]
 ```
-6. Edit settings.py to specify the directory where templates are stored:
+7. Edit settings.py to specify the directory where templates are stored:
 ```python
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -55,8 +59,8 @@ TEMPLATES = [
 
 ```
 
-7. Draft super basic HTML files under `templates/` starting w/ `index.html` and then maybe one other page like `other.html` (can add template tags later for data injection)
-8. Create a new view by editing `views.py` within the app folder. Specifically, configure the HTML returned by a request like this:
+8. Draft super basic HTML files under `templates/` starting w/ `index.html` and then maybe one other page like `other.html` (can add template tags later for data injection)
+9. Create a new view by editing `views.py` within the app folder. Specifically, configure the HTML returned by a request like this:
 ```python
 
 # Super simple, not used often
@@ -74,7 +78,7 @@ def index(request):
     return render(request, 'basic_app/index.html', context_dict)
 
 ```
-9. Link the new view to a url by editing the main `urls.py` within the project sub-folder. Specifically, add something like this: 
+10. Link the new view to a url by editing the main `urls.py` within the project sub-folder. Specifically, add something like this: 
 ```python
 from basic_app import views # don't forget to import views from app subfolder we created
 from django.urls import path, re_path, include
@@ -86,7 +90,7 @@ urlpatterns = [
     re_path('^basic_app/', include('basic_app.urls')),
 ]
 ```
-10. Now add another `urls.py` file to the app subfolder (e.g., `basic_app`) and specify paths:
+11. Now add another `urls.py` file to the app subfolder (e.g., `basic_app`) and specify paths:
 ```python
 from basic_app import views # don't forget to import views from app subfolder we created
 from django.urls import path, re_path, 
@@ -94,8 +98,8 @@ urlpatterns = [
     re_path(r'^other/$', views.other, name='other') # so we can go to https://127.0.0.1:8000/basic_app/other/ to access built-in Django admin UI
 ]
 ```
-11. Run the server locally to test it out: `python manage.py runserver`
-12. Copy local host address into address bar to see the site
+12. Run the server locally to test it out: `python manage.py runserver`
+13. Copy local host address into address bar to see the site
 
 
 **NOTE:** the above workflow is not ideal. It's best practice to put another urls.py file inside of each individual app, then refer to that
@@ -103,11 +107,6 @@ file in your project folder using `django.conf.urls.include`. For an example, se
 the first_project subfolder contains a `urls.py` file that references the `urls.py` file found in `first_app/urls.py`. This approach creates 
 modularity, making it simpler to plug your apps into different Django projects.
 
-## Getting Started Build a Website with Django
-I think this is a pretty good workflow:
-
-1. First complete steps 1-6 above to get the basic setup
-1. 
 
 ## More Useful Django Commands
 ### Migration commands
