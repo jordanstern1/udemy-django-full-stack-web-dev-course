@@ -11,7 +11,9 @@ set up models/views/templates and wire the views up to URLs.
 **Before step 1, need to activate conda env w/ Django**: `$ conda activate myDjangoEnv`
 
 1. Create a project: `django-admin startproject ThrowAwayTest`. Note this will create files/folders like this: 
+
 ![Alt text](misc_images/django_project_initial_structure.png)
+
 2. Go to the project directory: `cd ThrowAwayTest`
 3. Create an app within the project: `python manage.py startapp AppTwo`
 4. Create a new view by editing `views.py` within the app folder. Specifically, configure the HTML returned by a request like this:
