@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>WELCOME TO RELATIVE URL TEMPLATES</h1>
+    
+    <!-- here basic_app is the app_name defined in learning_templates/basic_app/urls.py.
+    the purpose here is to avoid hard-coding URL paths to make sure this Django project can run on any machine
+    -->
+    <a href="{% url 'basic_app:other' %}">THE OTHER PAGE</a>
+
+    <!-- Need to run python manage.py migrate to get this admin link to work -->
+    <a href="{% url 'admin:index' %}">ADMIN</a>
+
+    <a href="{% url 'index' %}">INDEX</a>
+</body>
+</html>
