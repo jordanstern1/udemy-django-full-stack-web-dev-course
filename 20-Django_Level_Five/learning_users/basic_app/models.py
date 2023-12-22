@@ -6,7 +6,7 @@ from django.contrib.auth.models import User # built-in Django User model
 class UserProfileInfo(models.Model):
     # default user doesn't have this attribute, so here we can extend the User class 
     # (don't use inheritance; can cause problems)
-    user = models.OneToOne(User) 
+    user = models.OneToOneField(User) 
 
     # additional attributes added to User
     portfolio_site = models.URLField(blank=True)
