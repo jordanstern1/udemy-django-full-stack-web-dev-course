@@ -1,5 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import View, TemplateView, ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import (View, TemplateView, 
+                                  ListView, DetailView,
+                                  CreateView, UpdateView,
+                                  DeleteView)
 from basic_app import models
 
 # Create your views here.
@@ -22,6 +26,27 @@ class SchoolDetailView(DetailView):
     context_object_name = 'school_detail'
     model = models.School 
     template_name = 'basic_app/school_detail.html'
+
+
+class SchoolCreateView(CreateView):
+    fields = ('name', 'principal', 'location')  # define fields user can create (a security measure)
+    model = models.School
+
+class SchoolUpdateView(UpdateView):
+    # note location is excluded from list of updatable fields
+    # so user cannot update location (should be fixed for a school)
+    fields = ('name', 'principal') 
+    
+    model = models.School 
+
+class SchoolDeleteView(DeleteView):
+    
+    fields = ('name', 'principal', 'location')
+    model = models.School
+
+    # reverse_lazy uses lazy evaluation
+    # only evaluates when it'
+    success_url = reverse_lazy("basic_app:list")
 
 
 ## basic example with injection
