@@ -8,7 +8,7 @@ from django.urls import reverse
 class Post(models.Model):
     """ class for blog posts """
 
-    author = models.ForeignKey('auth.User') # author will be connected to superuser (assuming only superuser creates blog posts)
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE) # author will be connected to superuser (assuming only superuser creates blog posts)
     title = models.CharField(max_length=200)
     text = models.TextField()
     create_date = models.DateTimeField(default=timezone.now())
@@ -32,12 +32,12 @@ class Post(models.Model):
 class Comment(models.Model):
     """ class for comments on blog posts """
     
-    post = models.ForeignKey('blog.Post', related_name='comments') # each comment is associated with a post
+    post = models.ForeignKey('blog.Post', related_name='comments', on_delete=models.CASCADE) # each comment is associated with a post
     author = models.CharField(max_length=200)
     text = models.TextField()
     create_date = models.DateTimeField(default=timezone.now())
 
-    approved_comment = models.Boolean(default=False)
+    approved_comment = models.BooleanField(default=False)
 
     def approve(self):
         self.approved_comment = True
