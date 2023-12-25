@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('^$', views.HomePage.as_view(), name='home'),
     re_path('^accounts/', include('accounts.urls'), name='accounts'),
-    re_path('^accounts/', include('django.contrib.auth.urls'))
+    re_path('^accounts/', include('django.contrib.auth.urls')),
+    re_path(r'^test/$', views.TestPage.as_view(), name='test'),
+    re_path(r'^thanks/$', views.ThanksPage.as_view(), name='thanks'),
 ]
