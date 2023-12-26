@@ -8,5 +8,8 @@ class MovieAdmin(admin.ModelAdmin):
     # rather than using default ordering which will match ordering of fields in our model definition
     fields = ['release_year', 'title', 'length'] 
 
+    # now we can search by a field!
+    search_fields = ['title', 'length'] 
+
 admin.site.register(models.Customer)
 admin.site.register(models.Movie, MovieAdmin)
