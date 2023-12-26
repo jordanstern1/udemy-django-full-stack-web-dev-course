@@ -14,5 +14,8 @@ class MovieAdmin(admin.ModelAdmin):
     # now we can filter by fields
     list_filter = ['release_year', 'length', 'title']
 
+    # now we have multiple columns in the list view for movies—seems useful!
+    list_display = ['release_year', 'length', 'title']
+
 admin.site.register(models.Customer)
 admin.site.register(models.Movie, MovieAdmin)
