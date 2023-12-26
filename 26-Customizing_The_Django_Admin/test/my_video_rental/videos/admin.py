@@ -11,5 +11,8 @@ class MovieAdmin(admin.ModelAdmin):
     # now we can search by a field!
     search_fields = ['title', 'length'] 
 
+    # now we can filter by fields
+    list_filter = ['release_year', 'length', 'title']
+
 admin.site.register(models.Customer)
 admin.site.register(models.Movie, MovieAdmin)
