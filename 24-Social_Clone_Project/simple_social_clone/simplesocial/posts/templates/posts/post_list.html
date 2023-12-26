@@ -1,7 +1,7 @@
 {% extends "posts/post_base.html" %}
 
 
-{% block prepost %}
+{% block pre_post_content %}
 <div class="col-md-4">
     {% if request.user.is_authenticated %}
         <div class="card card-with-shadow">
@@ -10,7 +10,7 @@
                 <ul class="list-unstyled">
                     {% for member_group in get_user_groups %}
                         <li class="group li-with-bullet">
-                            <a href="{% url 'groups:single' sluge=member_group.group.slug %}"></a>
+                            <a href="{% url 'groups:single' slug=member_group.group.slug %}">{{ member_group.group.name }}</a>
                         </li>
                     {% endfor %}
                     
@@ -25,7 +25,7 @@
             <ul class="list-unstyled">
                 {% for other_group in get_other_groups %}
                 <li class="group li-with-bullet">
-                    <a href="{% url 'groups:single' slug=other_group.slug %}"></a>
+                    <a href="{% url 'groups:single' slug=other_group.slug %}">{{ other_group.name }}</a>
                 </li>
                 {% endfor %}
 
@@ -39,7 +39,7 @@
 {% block post_content %}
 <div class="col-md-8">
     {% for post in post_list %}
-        {% include "posts/_post.html %}
+        {% include "posts/_post.html" %}
     {% endfor %}
 </div>
 {% endblock %}

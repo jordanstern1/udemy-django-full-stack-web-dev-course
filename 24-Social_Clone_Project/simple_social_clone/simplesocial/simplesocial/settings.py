@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap5',
     'accounts',
+    'groups',
+    'posts',
     
 ]
 
@@ -120,8 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
-print(STATICFILES_DIR)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+print(STATICFILES_DIRS)
 
 LOGIN_REDIRECT_URL = 'test'
 LOGOUT_REDIRECT_URL = 'thanks'

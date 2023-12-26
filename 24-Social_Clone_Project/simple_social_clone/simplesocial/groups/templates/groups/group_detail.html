@@ -6,16 +6,16 @@
 <h2>Member Count: {{ group.members.count }}</h2>
 
 <div class="content">
-    {% if user in groups.members.all %}
+    {% if user in group.members.all %}
         <!-- user belongs to the group, give option to leave group -->
         <a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning">
-        <span class="glyphicon-remove-circle"></span>Leave</a>
+        <span class="glyphicon glyphicon-remove-circle"></span>Leave</a>
     {% else %}
         <!-- user doesn't belong to the group, give option to join group -->
         <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning">
-        <span class="glyphicon-ok-circle"></span>Join</a>
+        <span class="glyphicon glyphicon-ok-circle"></span>Join</a>
     {% endif %}
-<input type="submit">
+
 </div>
 
 {% endblock %}
@@ -27,7 +27,7 @@
         
         {% else %}
             {% for post in group.posts.all %}
-                {% include "posts/_post.html %}
+                {% include "posts/_post.html" %}
             {% endfor %}
         {% endif %}
     </div>
