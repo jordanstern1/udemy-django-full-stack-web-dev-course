@@ -17,5 +17,8 @@ class MovieAdmin(admin.ModelAdmin):
     # now we have multiple columns in the list view for movies—seems useful!
     list_display = ['release_year', 'length', 'title']
 
+    # now we can edit certain fields (NOTE: these fields must also be in list_display)
+    list_editable = ['length']
+    
 admin.site.register(models.Customer)
 admin.site.register(models.Movie, MovieAdmin)
